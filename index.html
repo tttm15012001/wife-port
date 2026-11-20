@@ -197,6 +197,86 @@ main[id], main section[id] {scroll-margin-top:125px;}
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
 }
+/* Alternating project surfaces and a focused workflow. */
+#canva, #work, #experience {
+  color-scheme: light;
+  --ink: #251934;
+  --muted: #655b70;
+  --line: #ddd4e6;
+  --green: #643895;
+  --white: #fff;
+  color: var(--ink);
+}
+#canva {background:#f0e8fa;}
+#work, #experience {background:#faf9fc;}
+#canva .card, #work .card {background:#fff;border-color:#dfd5e8;box-shadow:0 8px 24px #3b185208;}
+#canva .case-metric, #work .case-metric,
+#canva .card:nth-child(n) .case-metric, #work .card:nth-child(n) .case-metric {
+  background:#f5f0fa;
+  min-height:0;
+  padding:22px 28px;
+  border-bottom:1px solid #e7dfee;
+}
+#canva .case-metric strong, #work .case-metric strong {color:#643895;font-size:clamp(2.2rem,4vw,3.15rem);}
+#canva .case-metric small, #work .case-metric small {color:#725780;}
+#canva .case-metric div, #work .case-metric div {color:#655b70;}
+#canva .case-body, #work .case-body {padding:24px 28px 28px;}
+#canva .card:first-child, #work .card:first-child {
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);
+}
+#canva .card:first-child .case-metric, #work .card:first-child .case-metric {
+  background:#ded0ee;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border-bottom:0;
+}
+#canva .card:first-child .case-metric strong, #work .card:first-child .case-metric strong {
+  font-size:clamp(3rem,5.5vw,4.5rem);
+}
+#canva .card:last-child {grid-column:auto;display:flex;flex-direction:column;}
+#canva .card button, #work .card button {background:#fff;border-color:#bca6d0;color:#59317e;border-radius:999px;}
+#canva .card button:hover, #work .card button:hover {background:#f0e8fa;}
+#workflow {
+  background:linear-gradient(115deg,#191023,#281637);
+}
+#workflow .steps {
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:0;
+  border:1px solid #5f4773;
+  border-radius:14px;
+  margin-top:2rem;
+}
+#workflow .step {padding:25px 22px;border:0;}
+#workflow .step + .step {border-left:1px solid #5f4773;}
+#workflow .step h3 {color:#dfc1ff;font-size:1.12rem;min-height:2.8em;}
+#workflow .step li {font-size:.88rem;line-height:1.6;color:#e3d9ed;}
+#experience .jobs {border-top:0;margin-top:2rem;border-left:2px solid #ded0ee;margin-left:6px;}
+#experience .job {position:relative;padding:8px 0 30px 30px;margin-bottom:24px;}
+#experience .job:last-child {margin-bottom:0;}
+#experience .job::before {content:"";position:absolute;left:-7px;top:13px;width:12px;height:12px;background:#8150ac;border:3px solid #faf9fc;border-radius:50%;box-sizing:border-box;}
+#experience .job h3 span {color:#655b70;}
+#experience .job small {color:#643895;}
+#experience .tools {border-top:1px solid #ddd4e6;padding-top:24px;}
+#contact {background:radial-gradient(ellipse at 90% 100%,#48215f,transparent 65%),#110c18;}
+@media(max-width:950px) {
+  #workflow .steps {grid-template-columns:repeat(2,minmax(0,1fr));}
+  #workflow .step:nth-child(3) {border-left:0;}
+  #workflow .step:nth-child(n+3) {border-top:1px solid #5f4773;}
+}
+@media(max-width:680px) {
+  #canva .card:first-child, #work .card:first-child {display:flex;flex-direction:column;}
+  #canva .case-metric, #work .case-metric,
+  #canva .card:nth-child(n) .case-metric, #work .card:nth-child(n) .case-metric,
+  #canva .case-body, #work .case-body {padding:22px;}
+  #workflow .steps {grid-template-columns:minmax(0,1fr);}
+  #workflow .step + .step {border-left:0;border-top:1px solid #5f4773;}
+  #workflow .step h3 {min-height:0;}
+  #experience .job {padding-left:22px;}
+}
+
 </style>
 </head>
 <body id="top">
