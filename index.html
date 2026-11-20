@@ -551,7 +551,7 @@ get('save').addEventListener('click', () => {
   for (const [id, value] of Object.entries(values)) get(id).textContent = value;
   try {
     localStorage.setItem(storageKey, JSON.stringify(values));
-    get('edit-status').textContent = 'Saved in this browser.';
+    get('edit-status').textContent = 'Saved in this browser';
   } catch {
     get('edit-status').textContent = 'Browser storage is unavailable. Download an updated HTML file to keep your edits.';
   }
